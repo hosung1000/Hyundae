@@ -80,12 +80,12 @@ namespace HyundaeView._02._view
             고찾.Show();
 
 
-            개인고객_고객등록_계약고객 개고등계고 = new 개인고객_고객등록_계약고객();
-            개고등계고.MdiParent = this;
-            개고등계고.WindowState = FormWindowState.Maximized;
-            개고등계고.FormBorderStyle = FormBorderStyle.None;
-            Toppage.Controls.Add(개고등계고);
-            개고등계고.Show();
+            탑메인 탑메인 = new 탑메인();
+            탑메인.MdiParent = this;
+            탑메인.WindowState = FormWindowState.Maximized;
+            탑메인.FormBorderStyle = FormBorderStyle.None;
+            Toppage.Controls.Add(탑메인);
+            탑메인.Show();
 
             //가장 왼쪽 버튼 항목들
             //지금은 하드코딩으로 해놨는데 이미지버튼으로 대체 해야함
@@ -156,12 +156,12 @@ namespace HyundaeView._02._view
             switch (btn.Name)
             {
                 case "메인":
-                    개인고객_고객등록_계약고객 고객 = new 개인고객_고객등록_계약고객();
-                    고객.MdiParent = this;
-                    고객.WindowState = FormWindowState.Maximized;
-                    고객.FormBorderStyle = FormBorderStyle.None;
-                    Toppage.Controls.Add(고객);
-                    고객.Show();
+                    탑메인 탑메인 = new 탑메인();
+                    탑메인.MdiParent = this;
+                    탑메인.WindowState = FormWindowState.Maximized;
+                    탑메인.FormBorderStyle = FormBorderStyle.None;
+                    Toppage.Controls.Add(탑메인);
+                    탑메인.Show();
                     break;
                 case "고객":
                     개인고객_고객등록_계약고객 고객1 = new 개인고객_고객등록_계약고객();
