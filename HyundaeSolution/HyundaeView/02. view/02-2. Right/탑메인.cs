@@ -16,6 +16,7 @@ namespace HyundaeView._02._view._02_2._Right
     {
         _01._module.create ct = new _01._module.create();
         Panel pn01, pn02, pn03, pn04, pn05, pn06, pn07, pn08, pn09;
+        ListView lv;
         public 탑메인()
         {
             InitializeComponent();
@@ -56,19 +57,19 @@ namespace HyundaeView._02._view._02_2._Right
         {
             pnSet pn1 = new pnSet(this, 660, 230, 100, 70);
             Panel pn01 = ct.panel(pn1);
-            pn01.BackColor = Color.FromArgb(255, 102, 2);
+            pn01.BackColor = Color.FromArgb(241, 141, 0);
             Controls.Add(pn01);
 
             ArrayList btn_list = new ArrayList();
             btn_list.Add(new btnSet(this, "계약통합조회", "계약통합조회", 132, 230, 0, 0, btn_Click));
-            btn_list.Add(new btnSet(this, "고객등록", "고객등록", 132, 230, 132, 0, btn_Click));
+            btn_list.Add(new btnSet(this, "계약고객등록/조회", "고객등록/조회", 132, 230, 132, 0, btn_Click));
             btn_list.Add(new btnSet(this, "결제하기", "결제하기", 132, 230, 264, 0, btn_Click));
             btn_list.Add(new btnSet(this, "미정", "미정", 132, 230, 396, 0, btn_Click));
             btn_list.Add(new btnSet(this, "미정", "미정", 132, 230, 528, 0, btn_Click));
             for (int i = 0; i < btn_list.Count; i++)
             {
                 Button btn = ct.btn((btnSet)btn_list[i]);
-                btn.BackColor = Color.FromArgb(255, 102, 2);
+                btn.BackColor = Color.FromArgb(241, 141, 0);
                 btn.ForeColor = Color.Beige;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
@@ -174,10 +175,36 @@ namespace HyundaeView._02._view._02_2._Right
         {
             pnSet pn8 = new pnSet(this, 360, 230, 860, 570);
             Panel pn08 = ct.panel(pn8);
-            pn08.BackColor = Color.FromArgb(255, 102, 2);
+            pn08.BackColor = Color.White;
             Controls.Add(pn08);
+
+            ArrayList lb_list = new ArrayList();
+            lb_list.Add(new lbSet(this,"모집종사보수교육", "모집종사보수교육",180,20,10,20,10));
+            for(int i = 0; i<lb_list.Count;i++)
+            {
+                Label lb = ct.lable((lbSet)lb_list[i]);
+                pn08.Controls.Add(lb);
+            }
+            lvSet lv2 = new lvSet(this, "lv2", 340, 100, 10, 50, lv2_mouseClick);
+            lv = ct.listview(lv2);
+            lv.Font = new Font("Tahoma", 15, FontStyle.Bold);
+            lv.OwnerDraw = true;
+            lv.DrawColumnHeader += Lv_DrawColumnHeader;
+            lv.Columns.Add("", 0, HorizontalAlignment.Center);
+            lv.Columns.Add("구분", 100, HorizontalAlignment.Center);
+            lv.Columns.Add("수강신청", 120, HorizontalAlignment.Center);
+            lv.Columns.Add("수강기간", 120, HorizontalAlignment.Center);
+            
+            pn08.Controls.Add(lv);
         }
 
+        private void Lv_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.AliceBlue, e.Bounds);
+            e.DrawText();
+        }
+
+        //콜 센터 정보
         private void pn09list()
         {
             pnSet pn9 = new pnSet(this, 360, 30, 100, 770);
@@ -188,6 +215,7 @@ namespace HyundaeView._02._view._02_2._Right
             ArrayList line_list = new ArrayList();
             line_list.Add(new lbSet(this, "콜 센터 정보", "콜 센터 정보", 90, 20, 20, 10, 10));
             line_list.Add(new lbSet(this, "선", "", 1, 20, 120, 5, 1));
+           
             for (int i = 0; i < line_list.Count; i++)
             {
                 Label lb = ct.lable((lbSet)line_list[i]);
@@ -209,6 +237,12 @@ namespace HyundaeView._02._view._02_2._Right
                 pn09.Controls.Add(btn);
             }
         }
+        //콜 센터 정보 올라가기
+        private void pn10list()
+        {
+           
+        }
+        //^ 클릭시 pn10list() 뜨게 해야함
         private void pn09주요업무안내_click(object o, EventArgs e)
         {
             Button btn = (Button)o;
@@ -216,9 +250,22 @@ namespace HyundaeView._02._view._02_2._Right
             {
                 case "주요업무안내":
                     콜센터주요업무 콜센터주요업무 = new 콜센터주요업무();
+                    콜센터주요업무.StartPosition = FormStartPosition.Manual;
+                    콜센터주요업무.Location = new Point(690, 550);
                     콜센터주요업무.Show();
                     break;
+                case "위":
+                    콜센터정보 콜센터 = new 콜센터정보();
+                    콜센터.StartPosition = FormStartPosition.Manual;
+                    콜센터.Location = new Point(698, 730);
+                    콜센터.Show();
+                    break;
             }
+        }
+        private void lv2_mouseClick(object o, EventArgs e)
+        {
+          
+
         }
 
     }

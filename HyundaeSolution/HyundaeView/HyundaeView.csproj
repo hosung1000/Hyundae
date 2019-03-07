@@ -60,6 +60,12 @@
     <Compile Include="01. module\pnSet.cs" />
     <Compile Include="01. module\richBoxSet.cs" />
     <Compile Include="01. module\tbSet.cs" />
+    <Compile Include="02. view\02-0.login\로그인화면.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="02. view\02-0.login\로그인화면.Designer.cs">
+      <DependentUpon>로그인화면.cs</DependentUpon>
+    </Compile>
     <Compile Include="02. view\02-1. left\고객찾기.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,12 @@
     </Compile>
     <Compile Include="02. view\02-2. Right\개인고객_고객등록_계약고객.Designer.cs">
       <DependentUpon>개인고객_고객등록_계약고객.cs</DependentUpon>
+    </Compile>
+    <Compile Include="02. view\02-2. Right\콜센터정보.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="02. view\02-2. Right\콜센터정보.Designer.cs">
+      <DependentUpon>콜센터정보.cs</DependentUpon>
     </Compile>
     <Compile Include="02. view\02-2. Right\콜센터주요업무.cs">
       <SubType>Form</SubType>

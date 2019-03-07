@@ -34,11 +34,11 @@ namespace HyundaeView._02._view
             //하단 작업줄 아이콘 지정
 
             //전체 사이즈 지정
-            ClientSize = new Size(1920, 1020);
+            this.ClientSize = new Size(1920, 1020);
             
             //화면 시작 위치 지정
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(-10, 0);
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(-10, 0);
             //MID
             this.IsMdiContainer = true;
             //페이지 상단 컨트롤바
@@ -53,7 +53,7 @@ namespace HyundaeView._02._view
             //가장 왼쪽
             pnSet pn1 = new pnSet(this, 50, 1020, 0, 0);
             Panel Left = ct.panel(pn1);
-            Left.BackColor = Color.FromArgb(255, 102, 2);
+            Left.BackColor = Color.FromArgb(241, 141, 0);
             Controls.Add(Left);
 
             //가장 왼쪽 버튼 클릭시 나오는 폼<MDI>
@@ -64,7 +64,7 @@ namespace HyundaeView._02._view
             //가장 위쪽
             pnSet pn3 = new pnSet(this, 1320, 130, 600, 0);
             Panel top = ct.panel(pn3);
-            top.BackColor = Color.Beige;
+            top.BackColor = Color.FromArgb(69, 75, 89);
             Controls.Add(top);
 
             //가장 위쪽 버튼 클릭스 나오는 폼<MDI>
@@ -101,7 +101,7 @@ namespace HyundaeView._02._view
             for (int i = 0; i < LBtn_list.Count; i++)
             {
                 Button btn = ct.btn((btnSet)LBtn_list[i]);
-                btn.BackColor = Color.FromArgb(255, 102, 2);
+                btn.BackColor = Color.FromArgb(241, 141, 0);
                 btn.ForeColor = Color.White;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
@@ -110,13 +110,17 @@ namespace HyundaeView._02._view
 
             // 가장 위쪽 버튼 항목들
             ArrayList TBtn_list = new ArrayList();
-            TBtn_list.Add(new btnSet(this, "메인", "메인", 30, 25, 90, 105, TB_Click));
+            TBtn_list.Add(new btnSet(this, "메인", "메인", 40, 25, 100, 105, TB_Click));
             TBtn_list.Add(new btnSet(this, "고객", "고객", 50, 30, 180, 70, TB_Click));
 
             for (int i = 0; i < TBtn_list.Count; i++)
             {
                 Button btn = ct.btn((btnSet)TBtn_list[i]);
-                btn.BackColor = Color.FromArgb(255, 102, 2);
+                if (i == 0)
+                {
+                    btn.BackColor = Color.White;
+                }
+                btn.BackColor = Color.FromArgb(69, 75, 89);
                 btn.ForeColor = Color.White;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
