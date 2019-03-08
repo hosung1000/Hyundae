@@ -106,7 +106,7 @@ namespace HyundaeView._02._view._02_2._Right
             Controls.Add(pn04);
         }
 
-        //공지사항
+        //공지사항 -> 탭페이지 안에 리스트뷰를 넣는 방법
         private void pn05list()
         {
             pnSet pn5 = new pnSet(this, 360, 230, 860, 320);
@@ -129,6 +129,7 @@ namespace HyundaeView._02._view._02_2._Right
             tp1.Size = new Size(340, 180);
             tp1.Text = "전사공지";
             tp1.UseVisualStyleBackColor = true;
+            //tp1.Control.Add(this, "안녕");
 
             tp2.Size = new Size(340, 180);
             tp2.Text = "점포공지";
@@ -242,7 +243,7 @@ namespace HyundaeView._02._view._02_2._Right
         {
            
         }
-        //^ 클릭시 pn10list() 뜨게 해야함
+        // 클릭시 pn10list() 뜨게 해야함
         private void pn09주요업무안내_click(object o, EventArgs e)
         {
             Button btn = (Button)o;

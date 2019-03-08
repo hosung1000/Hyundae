@@ -30,7 +30,7 @@ namespace HyundaeView._02._view._02_2._Right
             linelist();
             labellist();
             buttonlist();
-            comboboxlist();
+            
 
         }
         //라인리스트
@@ -75,16 +75,7 @@ namespace HyundaeView._02._view._02_2._Right
             line_list.Add(new lbSet(this, "선", "", 450, 1, 770, 630, 1));
 
             line_list.Add(new lbSet(this, "선", "", 550, 1, 670, 660, 1)); //30
-             /*
-            line_list.Add(new lbSet(this, "선", "", 550, 1, 100, 700, 1));
-            line_list.Add(new lbSet(this, "선", "", 550, 1, 100, 731, 1));
-            line_list.Add(new lbSet(this, "선", "", 550, 1, 100, 762, 1));
-            line_list.Add(new lbSet(this, "선", "", 550, 1, 100, 793, 1));
-
-            line_list.Add(new lbSet(this, "선", "", 550, 1, 100, 824, 1)); //35
-            */
-
-
+           
             for (int i = 0; i < line_list.Count; i++)
             {
                 Label lb = ct.lable((lbSet)line_list[i]);
@@ -173,7 +164,7 @@ namespace HyundaeView._02._view._02_2._Right
 
         }
         //textbox 리스트
-        private void textlist()
+        public void textlist()
         {
             ArrayList textbox_list = new ArrayList();
             textbox_list.Add(new tbSet(this, "주민등록번호", 120, 20, 510, 36));
@@ -212,29 +203,26 @@ namespace HyundaeView._02._view._02_2._Right
             textbox_list.Add(new tbSet(this, "이메일끝", 100, 20, 330, 396));
 
             textbox_list.Add(new tbSet(this, "이메일선택", 80, 20, 435, 396));
-
+            
+            /*
             textbox_list.Add(new tbSet(this, "자택우편번호", 60, 20, 780, 241));
-            textbox_list.Add(new tbSet(this, "자택주소버튼", 20, 20, 841, 241));
             textbox_list.Add(new tbSet(this, "자택주소상단", 250, 20, 865, 241));
             textbox_list.Add(new tbSet(this, "자택주소변경일", 95, 20, 1120, 241));
             textbox_list.Add(new tbSet(this, "자택주소하단", 250, 20, 780, 272));
             textbox_list.Add(new tbSet(this, "자택주소하단2", 180, 20, 1035, 272));
 
             textbox_list.Add(new tbSet(this, "직장우편번호", 60, 20, 780, 303));
-            textbox_list.Add(new tbSet(this, "직장주소버튼", 20, 20, 841, 303));
             textbox_list.Add(new tbSet(this, "직장주소상단", 250, 20, 865, 303));
             textbox_list.Add(new tbSet(this, "직장주소변경일", 95, 20, 1120, 303));
             textbox_list.Add(new tbSet(this, "직장주소하단", 250, 20, 780, 334));
             textbox_list.Add(new tbSet(this, "직장주소하단2", 180, 20, 1035, 334));
-
+            */
             textbox_list.Add(new tbSet(this, "직업코드", 60, 20, 110, 473));
-            textbox_list.Add(new tbSet(this, "직업코드버튼", 20, 20, 171, 473));
             textbox_list.Add(new tbSet(this, "급수", 40, 20, 195, 473));
             textbox_list.Add(new tbSet(this, "직업명", 250, 20, 260, 473));
 
             //420, 1, 670, 467, 1
             textbox_list.Add(new tbSet(this, "관리사번호코드", 70, 20, 687, 503));
-            textbox_list.Add(new tbSet(this, "관리사번호버튼", 20, 20, 758, 503));
             textbox_list.Add(new tbSet(this, "취득경로", 120, 20, 821, 503));
             textbox_list.Add(new tbSet(this, "등록일", 100, 20, 975, 503));
 
@@ -247,8 +235,7 @@ namespace HyundaeView._02._view._02_2._Right
 
             //550, 1, 100, 670, 1
             textbox_list.Add(new tbSet(this, "자택우편번호", 60, 20, 780, 605));
-            textbox_list.Add(new tbSet(this, "자택주소버튼", 20, 20, 841, 605));
-            textbox_list.Add(new tbSet(this, "자택주소상단", 250, 20, 865, 605));
+           textbox_list.Add(new tbSet(this, "자택주소상단", 250, 20, 865, 605));
             textbox_list.Add(new tbSet(this, "자택주소변경일", 95, 20, 1120, 605));
             textbox_list.Add(new tbSet(this, "자택주소하단", 250, 20, 780, 636));
             textbox_list.Add(new tbSet(this, "자택주소하단2", 180, 20, 1035, 636));
@@ -268,19 +255,25 @@ namespace HyundaeView._02._view._02_2._Right
             btn_list.Add(new btnSet(this, "초기화", "초기화", 60, 25, 1035, 795, 초기화));
             btn_list.Add(new btnSet(this, "저장", "저장", 60, 25, 1100, 795, 저장));
             btn_list.Add(new btnSet(this, "닫기", "닫기", 60, 25, 1165, 795, 닫기));
+            btn_list.Add(new btnSet(this, "자택우편버튼", "우", 20, 20, 841, 241, 자택우편버튼));
+            btn_list.Add(new btnSet(this, "직장우편버튼", "우", 20, 20, 841, 303, 직장우편버튼));
+            btn_list.Add(new btnSet(this, "직업버튼", "버", 20, 20, 171, 473, 직업버튼));
+            btn_list.Add(new btnSet(this, "관리사버튼", "버", 20, 20, 758, 503, 관리사번호버튼));
+            btn_list.Add(new btnSet(this, "자택주소버튼", "버", 20, 20, 841, 605, 자택주소버튼));
             for (int i = 0; i < btn_list.Count; i++)
             {
                 Button btn = ct.btn((btnSet)btn_list[i]);
                 btn.FlatStyle = FlatStyle.Flat;
-                if(i>0)
+                if(i<3)
                 {
                    btn.Font = new Font("Tahoma",11F, FontStyle.Regular);
                 }
             }
         }
         //콤보박스 리스트
-        private void comboboxlist()
+        private void checkbox_list()
         {
+            CheckBox chb = new CheckBox();
 
         }
         private void 조회클릭(object o , EventArgs e)
@@ -299,6 +292,27 @@ namespace HyundaeView._02._view._02_2._Right
         {
 
         }
+        private void 자택우편버튼(object o , EventArgs e)
+        {
+            주소 주소 = new 주소(this);
+            주소.ShowDialog();
 
+        }
+        private void 직장우편버튼(object o, EventArgs e)
+        {
+
+        }
+        private void 직업버튼(object o, EventArgs e)
+        {
+
+        }
+        private void 관리사번호버튼(object o, EventArgs e)
+        {
+
+        }
+        private void 자택주소버튼(object o, EventArgs e)
+        {
+
+        }
     }
 }

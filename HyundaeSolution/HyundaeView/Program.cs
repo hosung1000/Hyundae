@@ -16,7 +16,7 @@ namespace HyundaeView
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HyundaeView._02._view._02_0.login.로그인화면());
+            Application.Run(new HyundaeView._02._view.main());
         }
     }
 }
